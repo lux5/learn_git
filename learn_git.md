@@ -26,7 +26,7 @@ flowchart LR
 	
 ```
 
-`git status`	查看仓库的状态
+`git status -s`	查看仓库的状态, `-s`以简略模式显示
 
 `git add`	添加到暂存区
 
@@ -56,3 +56,10 @@ flowchart LR
 > echo 需要被忽略的文件名 > .gitignore
 ```
 注意：`.gitignore`不能对已经添加到版本库中的文件生效！
+
+关于删除文件：
+如果只想删除版本库中的文件，而不像删除本地文件，则：
+`git rm --cache <filename>`
+
+忽略非空文件夹`tmp`，这里的文件夹要以`/`结尾！
+`> echo 'tmp/' >> .gitignore`
