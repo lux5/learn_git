@@ -33,6 +33,7 @@ flowchart LR
 `git commit`	提交（仅限于暂存区的文件，而不是工作区里的文件）
 
 `git log --oneline`	查看提交记录（`--oneline`参数来查看简介的提交记录）
+`git log --graph --oneline`: 以简易图形的方式在console中查看各个分支的路线图
 
 `git ls-files`	查看暂存区的内容，文件列表
 
@@ -63,3 +64,12 @@ flowchart LR
 
 忽略非空文件夹`tmp`，这里的文件夹要以`/`结尾！
 `> echo 'tmp/' >> .gitignore`
+
+`git branch`: 查看当前仓库的所有分支
+`git branch <分支名>`: 创建新的分支
+`git switch <分支名>`：切换到<分支名>这个分支
+注意：`git checkout`：既可以切换分支，又可以恢复之前版本的文件，为了不产生歧义，尽量使用`git switch`命令来切换到不同的分支
+`git merge <分支名>`：将<分支名>这个分支合并到当前分支中
+`git branch -d <分支名>`：删除<分支名>这个已经合并的分支，如果强制删除分支，则使用`git branch -D`
+
+如果在不同分支中修改了同一文件的同一代码，就需要手动解决合并操作时的冲突问题了
